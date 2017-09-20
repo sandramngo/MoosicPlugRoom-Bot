@@ -3884,6 +3884,38 @@ gifCommand: {
                     }
                 }
             },
+		
+	    wyrCommand: {
+                command: 'wyr',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                            function get_question(func)
+                            {
+                                $.getJSON(
+                                    "https://www.rrrather.com/botapi",
+                                    {
+                                        "format": "json"
+                                    },
+                                    function(response)
+                                    {
+                                        func(response.title, response.choicea, response.choiceb);
+                                    }
+                                    )
+                            }
+
+                            get_question(function(title, choicea, choiceb) {
+                                if (typeof title !== 'undefined') {
+                                    API.sendChat(subChat(title + ": a. " + choicea + " or b. " + choiceb));
+                                }
+                            });
+                    }
+                }
+            },
 
             youtubeCommand: {
                 command: 'youtube',
