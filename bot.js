@@ -3910,7 +3910,7 @@ gifCommand: {
 
                             get_question(function(title, choicea, choiceb) {
                                 if (typeof title !== 'undefined') {
-                                    API.sendChat(subChat(title + ": a. " + choicea + " or b. " + choiceb));
+                                    API.sendChat(subChat(basicBot.chat.blank,{msg: title + ": a. " + choicea + " or b. " + choiceb}));
                                 }
                             });
                     }
