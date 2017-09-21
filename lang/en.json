@@ -324,6 +324,7 @@
 "youaredj": "\/me @%%NAME%%, you are currently DJing.",
 "youarenext": "\/me @%%NAME%%, you are DJing after this song.",
 "youtube": "\/me [%%NAME%%] Subscribe to us on youtube: %%LINK%%",
+"blank": "\/me ",
 
 
 "eatcookie": "\/me eats a cookie.",
