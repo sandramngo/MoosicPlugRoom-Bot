@@ -933,7 +933,7 @@ basicBot.roomUtilities.booth.unlockBooth();
         },
         eventDjadvance: function (obj) {
         if (basicBot.settings.autowoot) {
-            $("#woot").click(); // autowoot
+            $(".btn-like").click(); // autowoot
         }
 
             var user = basicBot.userUtilities.lookupUser(obj.dj.id)
@@ -1412,7 +1412,7 @@ console.log(basicBot.room.name);
             API.sendChat('/cap ' + basicBot.settings.startupCap);
             API.setVolume(basicBot.settings.startupVolume);
             if (basicBot.settings.autowoot) {
-            $("#woot").click();
+            $(".btn-like").click();
             }
             if (basicBot.settings.startupEmoji) {
                 var emojibuttonoff = $(".icon-emoji-off");
