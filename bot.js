@@ -87,7 +87,7 @@ return sock.msg(data);
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/lang/langIndex.json", function (json) {
+        $.get("https://cdn.jsdelivr.net/gh/sandramngo/MoosicPlugRoom-Bot/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -231,7 +231,7 @@ return str;
         loggedInID: null,
         scriptLink: "https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/master/bot.js",
         cmdLink: "No current list",
-        chatLink: "https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/lang/en.json",
+        chatLink: "https://cdn.jsdelivr.net/gh/sandramngo/MoosicPlugRoom-Bot/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -239,8 +239,8 @@ return str;
         settings: {
             botName: "DJ Lit AF",
             language: "english",
-            chatLink: "https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/lang/en.json",
-            scriptLink: "https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/bot.js",
+            chatLink: "https://cdn.jsdelivr.net/gh/sandramngo/MoosicPlugRoom-Bot/lang/en.json",
+            scriptLink: "https://cdn.jsdelivr.net/gh/sandramngo/MoosicPlugRoom-Bot/bot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -2642,11 +2642,11 @@ gifCommand: {
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/lang/langIndex.json", function (json) {
+                        $.get("https://cdn.jsdelivr.net/gh/sandramngo/MoosicPlugRoom-Bot/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
-                                API.sendChat(subChat(basicBot.chat.langerror, {link: "https://rawgit.com/sandramngo/MoosicPlugRoom-Bot/master/lang/langIndex.json"}));
+                                API.sendChat(subChat(basicBot.chat.langerror, {link: "https://cdn.jsdelivr.net/gh/sandramngo/MoosicPlugRoom-Bot/lang/langIndex.json"}));
                             }
                             else {
                                 basicBot.settings.language = argument;
